@@ -3,6 +3,7 @@ from UserLib.RegisteredHttpUser import RegisteredHttpUser
 from UserLib.GuestHttpUser import GuestHttpUser
 from TaskSetLib.CategoryNavigate import CategoryNavigate
 from TaskSetLib.MyAccountNavigate import MyAccountNavigate
+from TaskSetLib.ViewCart import ViewCart
 from CommonLib.UserLoader import UserLoader
 
 @events.test_start.add_listener
@@ -15,12 +16,12 @@ def on_test_stop(**kwargs):
 
 
 class UserGroupA(RegisteredHttpUser):
-    weight = 4
-    RegisteredHttpUser.tasks = [MyAccountNavigate, CategoryNavigate]
+    weight = 1
+    RegisteredHttpUser.tasks = [MyAccountNavigate, CategoryNavigate, ViewCart]
 
 class UserGroupB(GuestHttpUser):
-    weight = 1
-    GuestHttpUser.tasks = [CategoryNavigate]
+    weight = 4
+    GuestHttpUser.tasks = [CategoryNavigate, ViewCart]
 
 
 

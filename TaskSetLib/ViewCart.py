@@ -15,3 +15,7 @@ class ViewCart(SequentialTaskSet):
                     response.success()
                 else:
                     response.failure("Failed to get all cart items, Text: " + response.text)
+
+    @task
+    def exit_navigation(self):
+        self.interrupt()
