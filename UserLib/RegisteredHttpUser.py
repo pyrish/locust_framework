@@ -21,8 +21,9 @@ class RegisteredHttpUser(AbstractUser):
         form_data = {'email': user_obj['username'], 'passwd':['password'],
                     'back':['my-account'], 'SubmitLogin':''}
         with self.client.post("/index.php?controller=authentication", form_data, headers=UtilHelper.get_base_header(), catch_response=True) as response:
-            if self.verify_login_success(response, user_obj['email']):
-                super().set_email(user_obj['email']) # comes from AbstractUser.py
+            if self.verify_login_success(response, user_obj['username']):
+                #Logger.log_message("Login successful with user : " + user_obj['username'], LogType.INFO)
+                super().set_email(user_obj['username']) # comes from AbstractUser.py
                 super().set_cookie(response.cookies) # comes from AbstractUser.py
 
     def on_stop(self):

@@ -15,10 +15,12 @@ def on_test_stop(**kwargs):
 
 
 class UserGroupA(RegisteredHttpUser):
-    RegisteredHttpUser.tasks = [MyAccountNavigate]
+    weight = 4
+    RegisteredHttpUser.tasks = [MyAccountNavigate, CategoryNavigate]
 
-# class UserGroupB(GuestHttpUser):
-#     GuestHttpUser.tasks = [CategoryNavigate]
+class UserGroupB(GuestHttpUser):
+    weight = 1
+    GuestHttpUser.tasks = [CategoryNavigate]
 
 
 

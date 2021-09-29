@@ -1,22 +1,29 @@
 from locust import task, SequentialTaskSet
+from CommonLib.UtilHelper import UtilHelper
 
 
 class CategoryNavigate(SequentialTaskSet):
     
     def on_start(self):
-        pass
+        self.header = UtilHelper.get_base_header_with_cookie(self.user.get_cookie())
 
     @task
     def navigate_to_women_category(self):
-        pass
+        with self.client.get("/index.php?id_category=3&controller=category", headers=self.header, catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to navigate to women category, EXCEPTION" + response.text)
 
     @task
     def navigate_to_dresses_category(self):
-        pass
+        with self.client.get("/index.php?id_category=8&controller=category", headers=self.header, catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to navigate to dresses category, EXCEPTION" + response.text)
 
     @task
     def navigate_to_shirt_category(self):
-        pass
+        with self.client.get("/index.php?id_category=5&controller=category", headers=self.header, catch_response=True) as response:
+            if response.status_code != 200:
+                response.failure("Failed to navigate to shirt category, EXCEPTION" + response.text)
 
 
     @task
