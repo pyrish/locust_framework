@@ -25,6 +25,8 @@ class RegisteredHttpUser(AbstractUser):
                 #Logger.log_message("Login successful with user : " + user_obj['username'], LogType.INFO)
                 super().set_email(user_obj['username']) # comes from AbstractUser.py
                 super().set_cookie(response.cookies) # comes from AbstractUser.py
+                print(" -- REGISTERED USER COOKIES -- ")
+                print(UtilHelper.get_base_header_with_cookie(response.cookies))
 
     def on_stop(self):
         pass

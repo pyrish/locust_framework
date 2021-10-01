@@ -10,7 +10,7 @@ class MyAccountNavigate(SequentialTaskSet):
         # since RegisteredHttpUser(on start) already grabbed the cookies and RegisteredHttpUser
         # inherits from AbstractUser
         header = UtilHelper.get_base_header_with_cookie(self.user.get_cookie())
-        print(header)
+        # print(header)
 
         with self.client.get("/index.php?controller=addresses", headers=header, catch_response=True) as response:
             if response.status_code == 200:
