@@ -1,5 +1,6 @@
 from locust import task, SequentialTaskSet
 from CommonLib.UtilHelper import UtilHelper
+from CommonLib.LogModule import *
 
 
 class MyAccountNavigate(SequentialTaskSet):
@@ -14,11 +15,10 @@ class MyAccountNavigate(SequentialTaskSet):
 
         with self.client.get("/index.php?controller=addresses", headers=header, catch_response=True) as response:
             if response.status_code == 200:
-                pass
-                #Logger.log_message("fetch my-account user address" + self.user.get_email())
+                Logger.log_message("fetch my-account user address" + self.user.get_email())
             else:
                 response.failure("Failed to fetch my-account user address" + self.user.get_email())
-                #Logger.log_message("Failed to fetch my-account user address" + self.user.get_email(), LogType.ERROR)
+                Logger.log_message("Failed to fetch my-account user address" + self.user.get_email(), LogType.ERROR)
 
     @task
     def exit_task_execution(self):

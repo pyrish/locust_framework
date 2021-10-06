@@ -14,8 +14,8 @@ class GuestHttpUser(AbstractUser):
                 # Logger
             else:
                 super().set_cookie(response.cookies)
-                print(" -- GUEST USER COOKIES -- ")
-                print(UtilHelper.get_base_header_with_cookie(response.cookies))
+                # print(" -- GUEST USER COOKIES -- ")
+                # print(UtilHelper.get_base_header_with_cookie(response.cookies))
 
     def on_stop(self):
         pass

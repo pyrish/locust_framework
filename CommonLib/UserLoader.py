@@ -13,7 +13,7 @@ class UserLoader:
         reader = csv.DictReader(open(UserLoader.csv_file_path))
         for line_elem in reader:
             UserLoader.user_list.append(line_elem)
-        print(UserLoader.user_list)
+        # print(UserLoader.user_list)
 
     @staticmethod
     def get_user():

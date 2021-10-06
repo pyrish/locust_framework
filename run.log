@@ -1,0 +1,21 @@
+[2021-10-06 06:40:30,041] pyrishs-MacBook-Pro.local/INFO/locust_test_load: .......... Initiating Load Test ..........
+[2021-10-06 06:40:30,042] pyrishs-MacBook-Pro.local/INFO/locust.runners: Ramping to 5 users at a rate of 5.00 per second
+[2021-10-06 06:40:30,044] pyrishs-MacBook-Pro.local/INFO/locust.runners: All users spawned: {"UserGroupA": 4, "UserGroupB": 1} (5 total users)
+[2021-10-06 06:40:37,913] pyrishs-MacBook-Pro.local/INFO/locust_test_load: Login successful with user : perf_user_2@gmail.com
+[2021-10-06 06:40:37,981] pyrishs-MacBook-Pro.local/INFO/locust_test_load: Login successful with user : perf_user_4@gmail.com
+[2021-10-06 06:40:38,007] pyrishs-MacBook-Pro.local/INFO/locust_test_load: Login successful with user : perf_user_5@gmail.com
+[2021-10-06 06:40:44,866] pyrishs-MacBook-Pro.local/INFO/locust_test_load: Login successful with user : perf_user_3@gmail.com
+[2021-10-06 06:40:48,780] pyrishs-MacBook-Pro.local/INFO/locust_test_load: fetch my-account user addressperf_user_5@gmail.com
+[2021-10-06 06:40:57,258] pyrishs-MacBook-Pro.local/INFO/locust_test_load: fetch my-account user addressperf_user_4@gmail.com
+[2021-10-06 06:41:01,474] pyrishs-MacBook-Pro.local/INFO/locust_test_load: fetch my-account user addressperf_user_5@gmail.com
+[2021-10-06 06:41:13,739] pyrishs-MacBook-Pro.local/INFO/locust_test_load: fetch my-account user addressperf_user_5@gmail.com
+[2021-10-06 06:41:36,361] pyrishs-MacBook-Pro.local/INFO/locust_test_load: fetch my-account user addressperf_user_3@gmail.com
+[2021-10-06 06:41:42,874] pyrishs-MacBook-Pro.local/INFO/locust_test_load: fetch my-account user addressperf_user_4@gmail.com
+[2021-10-06 06:41:50,284] pyrishs-MacBook-Pro.local/INFO/locust_test_load: fetch my-account user addressperf_user_3@gmail.com
+[2021-10-06 06:41:51,988] pyrishs-MacBook-Pro.local/INFO/locust_test_load: fetch my-account user addressperf_user_2@gmail.com
+[2021-10-06 06:42:02,510] pyrishs-MacBook-Pro.local/INFO/locust_test_load: fetch my-account user addressperf_user_3@gmail.com
+[2021-10-06 06:42:04,111] pyrishs-MacBook-Pro.local/INFO/locust_test_load: fetch my-account user addressperf_user_2@gmail.com
+[2021-10-06 06:42:05,627] pyrishs-MacBook-Pro.local/INFO/locust_test_load: .......... Load Test Completed ..........
+[2021-10-06 06:42:12,807] pyrishs-MacBook-Pro.local/INFO/locust.main: Running teardowns...
+[2021-10-06 06:42:12,807] pyrishs-MacBook-Pro.local/INFO/locust.main: Shutting down (exit code 0), bye.
+[2021-10-06 06:42:12,808] pyrishs-MacBook-Pro.local/INFO/locust.main: Cleaning up runner...

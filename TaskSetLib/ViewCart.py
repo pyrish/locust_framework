@@ -1,5 +1,6 @@
 from locust import task, SequentialTaskSet
 from CommonLib.UtilHelper import UtilHelper
+from CommonLib.LogModule import *
 
 
 class ViewCart(SequentialTaskSet):
@@ -10,11 +11,14 @@ class ViewCart(SequentialTaskSet):
         with self.client.get("/index.php?controller=order", headers=header, catch_response=True) as response:
             if response.status_code != 200:
                 response.failure("Failed to get all cart items, Statuscode: " + str(response.status_code))
+                Logger.log_message("Failed to get all cart items", LogType.ERROR)
+                
             else:
                 if 'Shopping-cart summary' in response.text:
                     response.success()
                 else:
                     response.failure("Failed to get all cart items, Text: " + response.text)
+                    Logger.log_message("Failed to get all cart items", LogType.ERROR)
 
     @task
     def exit_navigation(self):

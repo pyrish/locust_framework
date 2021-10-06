@@ -1,5 +1,6 @@
 from locust import task, SequentialTaskSet
 from CommonLib.UtilHelper import UtilHelper
+from CommonLib.LogModule import *
 
 
 class CategoryNavigate(SequentialTaskSet):
@@ -12,19 +13,21 @@ class CategoryNavigate(SequentialTaskSet):
         with self.client.get("/index.php?id_category=3&controller=category", headers=self.header, catch_response=True) as response:
             if response.status_code != 200:
                 response.failure("Failed to navigate to women category, EXCEPTION" + response.text)
+                Logger.log_message("Failed to navigate to women category", LogType.ERROR)
 
     @task
     def navigate_to_dresses_category(self):
         with self.client.get("/index.php?id_category=8&controller=category", headers=self.header, catch_response=True) as response:
             if response.status_code != 200:
                 response.failure("Failed to navigate to dresses category, EXCEPTION" + response.text)
+                Logger.log_message("Failed to navigate to dresses category", LogType.ERROR)
 
     @task
     def navigate_to_shirt_category(self):
         with self.client.get("/index.php?id_category=5&controller=category", headers=self.header, catch_response=True) as response:
             if response.status_code != 200:
                 response.failure("Failed to navigate to shirt category, EXCEPTION" + response.text)
-
+                Logger.log_message("Failed to navigate to shirt category", LogType.ERROR)
 
     @task
     def exit_task_execution(self):
